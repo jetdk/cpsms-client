@@ -1,4 +1,4 @@
-# CPSMS
+# CPSMS-client
 
 [![PyPI version](https://badge.fury.io/py/cpsms.svg)](https://badge.fury.io/py/cpsms-client)
 [![Python Versions](https://img.shields.io/pypi/pyversions/cpsms.svg)](https://pypi.org/project/cpsms-client/)
@@ -337,7 +337,11 @@ Maximum message length: **1530 characters** (10 SMS segments joined)
 ```bash
 # Clone the repository
 git clone https://github.com/jetdk/cpsms-client.git
+<<<<<<< HEAD
 cd cpsms-client
+=======
+cd cpsms
+>>>>>>> 8cc22b3acf8430a6d0279ed57bee173b41907922
 
 # Install dev dependencies
 pip install -e ".[dev]"
@@ -349,7 +353,7 @@ pytest
 mypy src/cpsms
 
 # Run linting
-ruff check src/cpsms
+ruff check src/cpsms-client
 ```
 
 ## License
@@ -360,4 +364,4 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 - [CPSMS.dk](https://cpsms.dk) - Official website
 - [API Documentation](https://api.cpsms.dk/documentation/index.html) - Official API docs
-- [PyPI Package](https://pypi.org/project/cpsms/) - Python Package Index
+- [PyPI Package](https://pypi.org/project/cpsms-client/) - Python Package Index

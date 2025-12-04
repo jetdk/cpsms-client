@@ -32,6 +32,7 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
     "Topic :: Communications :: Telephony",
     "Topic :: Software Development :: Libraries :: Python Modules",
     "Typing :: Typed",
@@ -97,10 +98,10 @@ ignore = [
 ]
 
 [tool.ruff.lint.isort]
-known-first-party = ["cpsms"]
+known-first-party = ["cpsms-client"]
 
 [tool.coverage.run]
-source = ["src/cpsms"]
+source = ["src/cpsms-client"]
 branch = true
 
 [tool.coverage.report]

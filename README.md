@@ -1,7 +1,7 @@
 # CPSMS
 
-[![PyPI version](https://badge.fury.io/py/cpsms.svg)](https://badge.fury.io/py/cpsms)
-[![Python Versions](https://img.shields.io/pypi/pyversions/cpsms.svg)](https://pypi.org/project/cpsms/)
+[![PyPI version](https://badge.fury.io/py/cpsms.svg)](https://badge.fury.io/py/cpsms-client)
+[![Python Versions](https://img.shields.io/pypi/pyversions/cpsms.svg)](https://pypi.org/project/cpsms-client/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A Python client for the [CPSMS.dk](https://cpsms.dk) SMS Gateway API with both synchronous and asynchronous support.
@@ -18,7 +18,7 @@ A Python client for the [CPSMS.dk](https://cpsms.dk) SMS Gateway API with both s
 ## Installation
 
 ```bash
-pip install cpsms
+pip install cpsms-client
 ```
 
 ## Quick Start
@@ -336,8 +336,8 @@ Maximum message length: **1530 characters** (10 SMS segments joined)
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/cpsms.git
-cd cpsms
+git clone https://github.com/jetdk/cpsms-client.git
+cd cpsms-client
 
 # Install dev dependencies
 pip install -e ".[dev]"

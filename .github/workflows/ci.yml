@@ -33,11 +33,11 @@ jobs:
 
       - name: Run type checking
         run: |
-          mypy src/cpsms
+          python -m mypy src/cpsms
 
       - name: Run tests
         run: |
-          pytest tests/ -v --cov=src/cpsms --cov-report=xml
+          python -m pytest tests/ -v --cov=src/cpsms --cov-report=xml
 
       - name: Upload coverage
         uses: codecov/codecov-action@v4

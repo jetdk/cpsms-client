@@ -10,10 +10,10 @@ from typing import Any
 
 class SMSFormat(str, Enum):
     """SMS encoding format.
-    
+
     Attributes:
         GSM: Standard format - 160 chars per SMS (153 if multipart).
-        UNICODE: For special characters (Chinese, emojis, etc.) - 
+        UNICODE: For special characters (Chinese, emojis, etc.) -
                  70 chars per SMS (67 if multipart).
     """
     GSM = "GSM"
@@ -22,9 +22,9 @@ class SMSFormat(str, Enum):
 
 class DeliveryStatus(int, Enum):
     """Delivery report status codes.
-    
+
     These are the status values sent to your dlr_url webhook.
-    
+
     Attributes:
         SUCCESSFUL: Message delivered successfully.
         FAILED: Message delivery failed.
@@ -40,7 +40,7 @@ class DeliveryStatus(int, Enum):
 @dataclass
 class SMSResult:
     """Result of sending an SMS to a single recipient.
-    
+
     Attributes:
         to: The recipient phone number.
         cost: The cost in SMS points.
@@ -54,7 +54,7 @@ class SMSResult:
 @dataclass
 class SMSError:
     """Error when sending an SMS to a recipient.
-    
+
     Attributes:
         code: Error code from the API.
         message: Human-readable error message.
@@ -68,9 +68,9 @@ class SMSError:
 @dataclass
 class SendResponse:
     """Response from sending SMS.
-    
+
     Contains both successful sends and any errors that occurred.
-    
+
     Attributes:
         success: List of successfully sent messages.
         errors: List of failed messages with error details.
@@ -81,10 +81,10 @@ class SendResponse:
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> SendResponse:
         """Parse API response into SendResponse.
-        
+
         Args:
             data: Raw JSON response from the API.
-            
+
         Returns:
             Parsed SendResponse object.
         """
@@ -129,7 +129,7 @@ class SendResponse:
 @dataclass
 class Group:
     """SMS contact group.
-    
+
     Attributes:
         group_id: Unique identifier for the group.
         group_name: Display name of the group.
@@ -140,10 +140,10 @@ class Group:
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> Group:
         """Parse API response into Group.
-        
+
         Args:
             data: Raw JSON response from the API.
-            
+
         Returns:
             Parsed Group object.
         """
@@ -156,7 +156,7 @@ class Group:
 @dataclass
 class Contact:
     """SMS contact.
-    
+
     Attributes:
         phone_number: Phone number with country code.
         contact_name: Optional display name.
@@ -169,10 +169,10 @@ class Contact:
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> Contact:
         """Parse API response into Contact.
-        
+
         Args:
             data: Raw JSON response from the API.
-            
+
         Returns:
             Parsed Contact object.
         """
@@ -189,7 +189,7 @@ class Contact:
 @dataclass
 class LogEntry:
     """SMS log entry.
-    
+
     Attributes:
         to: Recipient phone number.
         from_: Sender name/number.
@@ -212,10 +212,10 @@ class LogEntry:
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> LogEntry:
         """Parse API response into LogEntry.
-        
+
         Args:
             data: Raw JSON response from the API.
-            
+
         Returns:
             Parsed LogEntry object.
         """

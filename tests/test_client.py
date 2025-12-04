@@ -5,18 +5,15 @@ import respx
 from httpx import Response
 
 from cpsms import (
-    CPSMSClient,
-    SMSFormat,
-    SendResponse,
-    Group,
-    Contact,
-    LogEntry,
-    CPSMSError,
     AuthenticationError,
+    Contact,
+    CPSMSClient,
+    Group,
     InsufficientCreditError,
-    BadRequestError,
+    LogEntry,
+    SendResponse,
+    SMSFormat,
 )
-
 
 BASE_URL = "https://api.cpsms.dk/v2"
 

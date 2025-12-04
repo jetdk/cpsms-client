@@ -4,8 +4,7 @@ import pytest
 import respx
 from httpx import Response
 
-from cpsms import AsyncCPSMSClient, SMSFormat
-
+from cpsms import AsyncCPSMSClient
 
 BASE_URL = "https://api.cpsms.dk/v2"
 

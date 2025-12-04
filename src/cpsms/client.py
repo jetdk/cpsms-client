@@ -8,21 +8,21 @@ from typing import Any
 
 import httpx
 
-from cpsms.models import (
-    SMSFormat,
-    SendResponse,
-    Group,
-    Contact,
-    LogEntry,
-)
 from cpsms.exceptions import (
-    CPSMSError,
     AuthenticationError,
-    InsufficientCreditError,
-    ForbiddenError,
-    NotFoundError,
-    ConflictError,
     BadRequestError,
+    ConflictError,
+    CPSMSError,
+    ForbiddenError,
+    InsufficientCreditError,
+    NotFoundError,
+)
+from cpsms.models import (
+    Contact,
+    Group,
+    LogEntry,
+    SendResponse,
+    SMSFormat,
 )
 
 
@@ -237,7 +237,7 @@ class CPSMSClient(CPSMSClientBase):
         Args:
             to: Phone number(s) with country code (e.g., "4512345678").
             message: SMS text (max 1530 characters).
-            from_: Sender name - alphanumeric (max 11 chars) or 
+            from_: Sender name - alphanumeric (max 11 chars) or
                    numeric (max 15 chars).
             timestamp: Schedule send time as Unix timestamp or datetime.
             encoding: Character encoding - "UTF-8" (default) or "ISO-8859-1".
@@ -245,7 +245,7 @@ class CPSMSClient(CPSMSClientBase):
             flash: If True, send as flash SMS (displays immediately on screen).
             reference: Your reference for the message (max 32 chars).
                       Required if you want to cancel the SMS later.
-            format_: SMSFormat.GSM (default) or SMSFormat.UNICODE for 
+            format_: SMSFormat.GSM (default) or SMSFormat.UNICODE for
                     special characters.
 
         Returns:
@@ -315,7 +315,8 @@ class CPSMSClient(CPSMSClientBase):
             Credit balance as formatted string (e.g., "9.843,40").
         """
         response = self._request("GET", "creditvalue")
-        return response.json()["credit"]
+        credit: str = response.json()["credit"]
+        return credit
 
     def delete_sms(self, reference: str) -> bool:
         """
@@ -633,7 +634,7 @@ class AsyncCPSMSClient(CPSMSClientBase):
         Args:
             to: Phone number(s) with country code (e.g., "4512345678").
             message: SMS text (max 1530 characters).
-            from_: Sender name - alphanumeric (max 11 chars) or 
+            from_: Sender name - alphanumeric (max 11 chars) or
                    numeric (max 15 chars).
             timestamp: Schedule send time as Unix timestamp or datetime.
             encoding: Character encoding - "UTF-8" (default) or "ISO-8859-1".
@@ -704,7 +705,8 @@ class AsyncCPSMSClient(CPSMSClientBase):
             Credit balance as formatted string (e.g., "9.843,40").
         """
         response = await self._request("GET", "creditvalue")
-        return response.json()["credit"]
+        credit: str = response.json()["credit"]
+        return credit
 
     async def delete_sms(self, reference: str) -> bool:
         """

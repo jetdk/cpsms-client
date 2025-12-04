@@ -3,14 +3,14 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "cpsms"
+name = "cpsms-client"
 version = "1.0.0"
 description = "Python client for the CPSMS.dk SMS Gateway API"
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.10"
 authors = [
-    { name = "Your Name", email = "your.email@example.com" }
+    { name = "Jerome Thorstenson", email = "jetdk81@gmail.com" }
 ]
 keywords = [
     "sms",
@@ -52,11 +52,11 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/yourusername/cpsms"
-Documentation = "https://github.com/yourusername/cpsms#readme"
-Repository = "https://github.com/yourusername/cpsms"
-Issues = "https://github.com/yourusername/cpsms/issues"
-Changelog = "https://github.com/yourusername/cpsms/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/jetdk/cpsms-client"
+Documentation = "https://github.com/jetdk/cpsms-client#readme"
+Repository = "https://github.com/jetdk/cpsms-client"
+Issues = "https://github.com/jetdk/cpsms-client/issues"
+Changelog = "https://github.com/jetdk/cpsms-client/blob/main/CHANGELOG.md"
 
 [tool.hatch.build.targets.sdist]
 include = [
@@ -97,10 +97,10 @@ ignore = [
 ]
 
 [tool.ruff.lint.isort]
-known-first-party = ["cpsms"]
+known-first-party = ["cpsms-client"]
 
 [tool.coverage.run]
-source = ["src/cpsms"]
+source = ["src/cpsms-client"]
 branch = true
 
 [tool.coverage.report]
